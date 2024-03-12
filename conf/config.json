@@ -1,0 +1,63 @@
+{
+  "env": "prod",
+  "port": "8031",
+  "aes_key": "sAd700a2cs3c3ea65d882d9307da7eb6",
+  "log": {
+    "level": "DEBUG",
+    "filename": "logs/app.log",
+    "max_size": 50,
+    "max_age": 5,
+    "max_backups": 5
+  },
+  "mysql":{
+    "host": "127.0.0.1",
+    "port": "3306",
+    "user": "root",
+    "password": "xiaoxin",
+    "db_name": "netops_devops"
+  },
+  "email": {
+    "host": "",
+    "port": 25,
+    "username": "",
+    "password": "",
+    "sender": "",
+    "to": [""]
+  },
+  "redis": {
+    "host": "127.0.0.1",
+    "port": "6379",
+    "db": 0
+  },
+  "kafka": {
+    "bootstrap_servers": [""],
+    "topic": "",
+    "key": "netops"
+  },
+  "jira": {
+    "jql": "issuetype=网络需求 and project=技术中心 and  status=编写方案 and updated >= -168h and (attachments is not EMPTY and (变更属地 in (南京,上海,北京) AND cf[10817]  = 生产环境)  or (变更属地=上海 and cf[10817] =沙箱环境 ))",
+    "server": "",
+    "user": "",
+    "password": "",
+    "transition": {
+      "await_status": "待批准",
+      "accept_operate": "点此，后分配执行方审核",
+      "accept_status": "执行方审批",
+      "security_operate": "送安全审批",
+      "security_status": "安全中心审批",
+      "exec_operate": "审批通过送实施",
+      "exec_status": "网络运维实施",
+      "exec_end_operate": "实施完成",
+      "exec_end_status": "验收中",
+      "reject_operate": "驳回",
+      "reject_status": "驳回"
+    }
+  },
+  "minio": {
+    "endpoint": "127.0.0.1:9000",
+    "access_key": "",
+    "secret_key": "",
+    "bucket": "netops",
+    "secure": false
+  }
+}

@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+package device;
+
+option go_package="./;net_api";
+
+message Command{
+  int32 id = 1;
+  string cmd = 2;
+  string status = 3;
+  string result = 4;
+}
+
+message ConfigRequest{
+  string device_type = 1;
+  string host = 2;
+  string username = 3;
+  string password = 4;
+  string enable_password = 5;
+  int32 port = 6;
+  repeated Command commands = 7;
+}
+
+message ConfigResponse{
+  int32 code = 1;
+  string message = 2;
+  repeated Command results = 3;
+}
+
+message HttpRequest{
+  string url = 1;
+  string method = 2;
+  string username = 3;
+  string password = 4;
+  string params = 5;
+}
+message HttpResponse{
+  int32 code = 1;
+  string message = 2;
+}
+
+service Device{
+  rpc Config(ConfigRequest) returns (ConfigResponse){}
+  rpc Show(ConfigRequest) returns (ConfigResponse){}
+  rpc Http(HttpRequest) returns (HttpResponse){}
+}
