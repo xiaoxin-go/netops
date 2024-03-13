@@ -145,6 +145,8 @@ var LoginExcludeAuth = []api{
 // ExcludeAuth 都有权限的接口
 var ExcludeAuth = []api{
 	{"GET", "/auth/public_key"},
+	{"GET", "/"},
+	{"GET", ""},
 	{"POST", "/auth/login"},
 } // 存放不校验的URL
 

@@ -11,7 +11,7 @@
 https://github.com/xiaoxin-go/netops-web
 
 ## 演示地址
-http://netops.xiaoxin-go.xyz guest/guest@123456
+http://120.27.157.92 guest/guest@123456
 
 ## 目录结构
 ```markdown

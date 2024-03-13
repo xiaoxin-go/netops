@@ -49,10 +49,12 @@ func isExcludeAuth(method, uri string) bool {
 func CasbinAuthor() gin.HandlerFunc {
 	return func(request *gin.Context) {
 		// 获取请求接口和方法
+
 		obj := strings.TrimRight(request.Request.URL.Path, "/")
 		objs := strings.Split(obj, "/api/v1")
 		obj = objs[len(objs)-1]
 		act := request.Request.Method
+		fmt.Println("----------------------->", obj, act)
 		// 排除不需要校验的权限
 		if isExcludeAuth(act, obj) {
 			request.Next()
